@@ -19,6 +19,24 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 12px;
+  animation: Dark-Effect 10s linear infinite;
+}
+@keyframes Dark-Effect {
+  0% {
+    background-color: #ffbb5cb5;
+  }
+  25% {
+    background-color: #fcbf49;
+  }
+  50% {
+    background-color: #000;
+  }
+  75% {
+    background-color: #fcbf49;
+  }
+  100% {
+    background-color: #ffbb5cb5;
+  }
 }
 .sun {
   width: 18vw;
@@ -26,6 +44,7 @@ body {
   background-color: #e25e3e;
   border-radius: 50%;
   position: relative;
+  overflow: hidden;
 
   &::after {
     content: "";
@@ -36,5 +55,22 @@ body {
     width: inherit;
     aspect-ratio: 1;
     background-color: #000;
+    animation: eclipse 10s ease-in-out infinite;
+  }
+}
+
+@keyframes eclipse {
+  0% {
+    translate: 100%;
+    scale: 1;
+  }
+  50% {
+    translate: 0%;
+    scale: 0.95;
+    box-shadow: rgba(255, 255, 255, 0.5) 0px 48px 100px 0px;
+  }
+  100% {
+    translate: -100%;
+    scale: 0.9;
   }
 }
